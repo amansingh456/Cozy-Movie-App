@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Cozy Films 📽️ || Log In</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lobster&family=Montserrat:wght@300;400&family=Pacifico&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(rgba(34, 37, 75, 0.4), rgba(34, 37, 75, 0.4)), url("https://assets.nflxext.com/ffe/siteui/vlv3/701eec50-4b87-4dc0-9d00-b0f54025dc36/028e62d2-2a59-4fc3-adaa-a0756a0512b9/IN-en-20220905-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+            font-family: 'Montserrat', sans-serif;
+
+
+        }
+        body a{
+            cursor: pointer;
+        }
+
+        body>a {
+            color: #dfd3e3;
+            font-family: 'Lobster', cursive;
+            letter-spacing: 5px;
+            word-spacing: 2px;
+            font-size: 50px;
+            font-weight: 400;
+            text-shadow: 1px 1px 1px rgb(224, 11, 11),
+                3px 3px 5px #22254b;
+            text-decoration: none;
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+
+        body>div {
+            width: 33%;
+            background-color: rgba(34, 37, 75, 0.9);
+            margin: auto;
+            margin-top: 50px;
+            padding: 40px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        body>div>form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        body>div>form>h1 {
+            color: #e50914;
+            margin-bottom: 20px;
+
+        }
+
+        body>div>form>.two {
+            text-align: end;
+            margin-bottom: 100px;
+        }
+
+        body>div>form>.three {
+            color: #dfd3e3;
+        }
+
+        body>div>form a {
+            color: #dfd3e3;
+        }
+
+        body>div>form a:hover {
+            font-size: 16.5px;
+        }
+
+        #email:focus {
+            border-bottom: 4px solid #e50914;
+            font-size: 18px;
+        }
+
+        #password:focus {
+            border-bottom: 4px solid #e50914;
+            font-size: 18px;
+        }
+
+        body>div>form>input {
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 20px;
+            background-color: #dfd3e3;
+            opacity: 0.8;
+            border-radius: 2px;
+            border: none;
+            outline: none;
+        }
+
+        input:focus {
+            border: none;
+        }
+
+        input[type="submit"] {
+            background-color: #e50914;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        ::placeholder {
+            color: #373b69;
+            opacity: 0.8;
+        }
+
+        @media all  and  (min-width: 600px) and (max-width:900px){
+            body>div{
+                width: 60%;
+            }
+        }
+        @media all  and  (min-width: 320px) and (max-width:599px){
+            body>div{
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="./index.html">
+        Cozy Films
+    </a>
+    <div>
+
+        <form>
+            <h1>Log In</h1>
+            <input type="text" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <p></p>
+            <input type="submit" value="Log In">
+            <p class="two"><a href="">Need Help ?</a></p>
+            <p class="three">New to BollyWood Movies ? <span> &nbsp; <a href="./signup.html">Sign In Here</a></span></p>
+        </form>
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", myFunc)
+
+    function myFunc(event) {
+        event.preventDefault()
+        // console.log("aman")
+        let email = document.querySelector("#email").value
+        let password = document.querySelector("#password").value
+
+
+        if (email == "" || password == "") {
+            swal("Please Enter all the details. ThankYou !")
+        }
+
+        else {
+            if (localStorage.getItem("usernameMovie") == email && localStorage.getItem("passwordMovie") == password) {
+                swal("Login Successfully ✌️")
+            }
+            else {
+                swal("Deatils Incorrect, Enter Correct Details ! ✅")
+            }
+        }
+
+    }
+</script>

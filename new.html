@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Films 📽️ || Details</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Lobster&family=Montserrat:wght@300;400&family=Pacifico&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background-color: #22254b;
+            width: 100%;
+            height: auto;
+        }
+
+        body button,
+        a {
+            cursor: pointer;
+        }
+
+        nav {
+            width: 100%;
+            height: 70px;
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: space-between; */
+            background-color: #373b69;
+        }
+
+        nav>div {
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        #middle>a {
+            color: #dfd3e3;
+            font-family: 'Lobster', cursive;
+            letter-spacing: 5px;
+            word-spacing: 2px;
+            font-size: 40px;
+            font-weight: 400;
+            text-shadow: 1px 1px 1px rgb(224, 11, 11),
+                3px 3px 5px #22254b;
+            text-decoration: none;
+
+        }
+
+        #container {
+            width: 80%;
+            height: 550px;
+            /* border: 1px solid red; */
+            display: flex;
+            margin: auto;
+            justify-content: space-between;
+            overflow-y: hidden;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        #container>div {
+            width: 48%;
+            height: 100%;
+        }
+
+        #container img {
+            width: 70%;
+            height: 100%;
+        }
+
+        #container h1,
+        h3 {
+            color: #dfd3e3;
+            text-align: left;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #container button {
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 26px;
+            background-color: #dfd3e3;
+            color:#22254b;
+            border: none;
+        }
+
+        #button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 450px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        #button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        #button:hover span {
+            padding-right: 25px;
+        }
+
+        #button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        @media all and (min-width:720px) and (max-width:950px){
+            #container{
+                width: 65%;
+                height: 1000px;
+                flex-direction: column;
+            }
+            #container>div{
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            #container h1,h3{
+                text-align: center;
+            }
+        }
+        @media all and (min-width:320px) and (max-width:719px){
+            #container{
+                width: 85%;
+                height: 1000px;
+                flex-direction: column;
+            }
+            #container>div{
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+            #container>div>img{
+                width: 100%;
+            }
+            #container h1,h3{
+                text-align: center;
+            }
+          #container button{
+                padding: 15px 5;
+                width: 300px;
+                font-size: 16px;
+            }
+        }
+        body>h2{
+            text-align: center;
+            color: #dfd3e3;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="middle"><a href="./index.html">Cozy Films</a></div>
+    </nav>
+    <div id="container">
+
+    </div>
+    <h2>© - @AmanSinghRajawat</h2>
+</body>
+
+</html>
+<script>
+    let detailedData = JSON.parse(localStorage.getItem("detMovie")) || []
+
+
+
+
+    function appendData(data) {
+        localStorage.clear()
+        document.getElementById("container").innerHTML = null
+
+        data.forEach((el) => {
+
+            let div1 = document.createElement("div")
+
+            let img = document.createElement("img")
+            img.src = el.poster
+
+
+            let div2 = document.createElement("div")
+
+            let name = document.createElement("h1")
+            name.innerText = el.title
+
+            let year = document.createElement("h3")
+            year.innerText = "Released year: \xa0" + el.year
+
+            let as = document.createElement("a")
+            as.href = "./signup.html"
+            let bt = document.createElement("button")
+            bt.id = "button"
+
+            let span = document.createElement("span")
+            span.innerText = `Stream it For Free Now..! ✌️`
+
+            bt.append(span)
+
+            as.append(bt)
+
+
+
+            div1.append(img)
+            div2.append(name, year, as)
+            document.querySelector("#container").append(div1, div2)
+        })
+
+
+    }
+
+    appendData(detailedData)
+</script>

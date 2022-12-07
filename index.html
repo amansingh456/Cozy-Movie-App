@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Films 📽️ || Official</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bdacf7f7da.js" crossorigin="anonymous"></script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+   
+        <nav>
+            <div class="menu">
+                <div class="box"><a href="#popup1"><i class="fa-solid fa-bars-staggered"></i></a></div>
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#" id="close">&times;</a>
+                        <div class="insidePopup">
+                            <ul class="menu-items">
+                                <li><a href="#"><button value="Romance" id="Romance">Romance</button></a></li>
+                                <li><a href="#"><button value="Drama" id="Drama">Drama</button></a></li>
+                                <li><a href="#"><button value="Action" id="Action">Action</button></a></li>
+                                <li><a href="#"><button value="Comedy" id="Comedy">Comedy</button></a></li>
+                                <li><a href="#"><button value="Thriller" id="Thriller">Thriller</button></a></li>
+                                <li><a href="#"><button value="Love" id="Love">Love</button></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div id="middle"><a href="">Cozy Films</a></div>
+
+
+            <div  id="right">
+                <div>
+                    <button id="serch_logo"><i class="fa-solid fa-magnifying-glass"  aria-hidden="true"></i></button>
+                    <div class="togglesearch">
+                        <input type="text" placeholder="Search Movies, Web-Series" id="query"/>
+                    </div>
+                </div>
+                <div>
+                    <div>Sort By IMDb Ratings</div>
+                    <button id="sort-lh" value="lh"><i class="fa-solid fa-arrow-down"></i></button> 
+                    <button id="sort-hl" value="hl"><i class="fa-solid fa-arrow-up"></i></button>
+                </div>
+            </div> 
+        </nav>
+        <div id="carosel">
+            
+        </div>
+        <div id="container">
+            <img src="./1484.gif" alt="">
+        </div>
+    
+</body>
+
+</html>
+<script src="index.js"></script>
