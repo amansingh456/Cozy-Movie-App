@@ -1,6 +1,6 @@
 # Cozy-Movie-App
 
-This is an Movie-App. I have used JavaScript, HTML and CSS to do different tasks in this project. Please have a look on this repo. You can find the deployed link below...
+This is an Movie-App. Implemented some of the functionalities like Searching from API, Sorting and Filteration. Please have a look on this repo. You can find the deployed link below....
 
 ## Deployed link -
 
